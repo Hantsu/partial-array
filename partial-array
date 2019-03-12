@@ -1,0 +1,44 @@
+/******************************************************************************
+
+Title:      PartialArray.cpp
+Author:     Max Taylor
+Date:       3/12/19
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+
+void getUserSize(int&);
+void fillArray(int[], int);
+void showArray(int[], int);
+
+const int SIZE=40;
+int main()
+{
+    int nums[SIZE];
+    int userSize;
+    
+    getUserSize(userSize);
+    fillArray(nums, userSize);
+    showArray(nums, userSize);
+    return 0;
+}
+
+void getUserSize(int& userS){
+    cout << "How many numbers do you want to enter?(up to 40)\n";
+    cin >> userS;
+    
+    return;
+}
+
+void fillArray(int nums[], int userS){
+    cout << "Enter " << userS << " integers: \n";
+    for (int i = 0; i < userS; i++)
+        cin >> nums[i];
+}
+
+void showArray(int nums[], int userS){
+    cout << "You entered: ";
+    for (int i = 0; i < userS; i++)
+    cout << nums[i] << " ";
+}
